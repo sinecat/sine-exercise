@@ -6,10 +6,7 @@ export default defineConfig({
   title: 'Rspress',
   description: 'Rspack-based Static Site Generator',
   icon: '/rspress-icon.png',
-<<<<<<< HEAD
-  base:'/sine-exercise',
-=======
->>>>>>> 5c9f285 (init)
+  base: '/index.html',
   logo: {
     light: '/rspress-light-logo.png',
     dark: '/rspress-dark-logo.png',

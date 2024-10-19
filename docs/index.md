@@ -2,7 +2,7 @@
 pageType: home
 
 hero:
-  name: Rspress
+  name: Sine-Exercises
   text: Rspack-based Static Site Generator
   tagline: Rspress tagline
   actions:
@@ -10,7 +10,7 @@ hero:
       text: Quick Start
       link: /guide/
     - theme: alt
-      text: GitHub
+      text: Github
       link: https://github.com/web-infra-dev/rspress
   image:
     src: /rspress-icon.png
