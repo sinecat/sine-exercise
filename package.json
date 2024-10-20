@@ -8,7 +8,9 @@
     "preview": "rspress preview"
   },
   "dependencies": {
+    "@ant-design/use-emotion-css": "^1.0.4",
     "@uidotdev/usehooks": "^2.4.1",
+    "ahooks": "^3.8.1",
     "antd": "^5.21.4",
     "rspress": "^1.32.0",
     "zustand": "^5.0.0"

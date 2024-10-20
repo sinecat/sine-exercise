@@ -12,11 +12,12 @@ interface QuestionState {
     currentQuestions: questionType[];
     setCurrentQuestion: (index: number, value: string) => void;
     setAllQuestionsCorrect: (index: number) => void;
+    resetAllQuestions: () => void;
 }
 
 export const useQuestionStore = create<QuestionState>((set) => ({
     currentQuestions: Array.from({length: 20}, (_, i) => ({
-        index: i + 1,
+        index: i,
         currentAnswer: undefined,
         answer: undefined,
         isCorrect: -1
@@ -31,11 +32,24 @@ export const useQuestionStore = create<QuestionState>((set) => ({
     setAllQuestionsCorrect: (questionNum: number) => {
         set((state) => ({
             currentQuestions: state.currentQuestions.map((question, index) => {
-                    const currentAnswer = judgeAnswers[questionNum - 1][index]
+                    const currentAnswer = judgeAnswers[questionNum][index]
                     return {
                         ...question,
                         currentAnswer,
                         isCorrect: question.answer === currentAnswer ? 1 : 0
+                    }
+                }
+            )
+        }));
+    },
+    resetAllQuestions: () => {
+        set((state) => ({
+            currentQuestions: state.currentQuestions.map((question, index) => {
+                    return {
+                        index: index,
+                        currentAnswer: undefined,
+                        answer: undefined,
+                        isCorrect: -1
                     }
                 }
             )
