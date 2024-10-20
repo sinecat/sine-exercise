@@ -1,5 +1,9 @@
 [
-  "index",
+  {
+    "name": "basis",
+    "label": "basis",
+    "type": "dir"
+  },
   {
     "name": "logic_600",
     "label": "logic_600",

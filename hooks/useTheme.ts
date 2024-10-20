@@ -1,3 +1,4 @@
+// @ts-ignore
 import { useEffect, useState } from 'react';
 
 // 创建一个自定义事件，用于手动触发 localStorage 的变化监听

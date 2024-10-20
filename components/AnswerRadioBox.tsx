@@ -31,9 +31,9 @@ const AnswerRadioBox = (props: { index: number, questionNum: number }) => {
                 <Radio value={'D'}>D</Radio>
             </Radio.Group>
             {currentQuestions[index].currentAnswer ?
-                <Flex gap="small">
+                <Flex gap="middle">
                     <Text type={currentQuestions[index].isCorrect ? 'success' : 'danger'}>
-                        你的答案：{currentQuestions[index].answer}
+                        你的答案：{currentQuestions[index].answer ? currentQuestions[index].answer : '未答'}
                     </Text>
                     <Text type="success">
                         正确答案：{currentQuestions[index].currentAnswer}

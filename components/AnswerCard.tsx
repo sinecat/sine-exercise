@@ -33,6 +33,7 @@ const AnswerCardButton = ({children, screenSize, ...rest}: ButtonProps & { scree
             position: 'fixed',
             bottom: 30,
             right: 10,
+            zIndex:999
         }
     ))
 
@@ -41,6 +42,7 @@ const AnswerCardButton = ({children, screenSize, ...rest}: ButtonProps & { scree
             position: 'fixed',
             bottom: 30,
             right: 10,
+            zIndex:999
         }
     ))
 
@@ -49,6 +51,7 @@ const AnswerCardButton = ({children, screenSize, ...rest}: ButtonProps & { scree
             position: 'fixed',
             right: '18%',
             bottom: 30,
+            zIndex:999
         }
     ))
 
@@ -119,6 +122,7 @@ const AnswerCard = () => {
     const handleFreshTheme = () => {
         const currentTheme = localStorage.getItem('rspress-theme-appearance')
         setSiteTheme(currentTheme||'light')
+        setOpen(false)
     }
 
     return (

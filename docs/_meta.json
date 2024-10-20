@@ -1,16 +1,12 @@
 [
   {
     "text": "Judgement",
-    "link": "/judgement/",
+    "link": "/judgement/basis/逻辑判断",
     "activeMatch": "/judgement/"
   },
   {
     "text": "Hello World",
     "link": "/hello/",
     "activeMatch": "/hello/"
-  },
-  {
-    "text": "API",
-    "link": "https://rspress.dev/api/index.html"
   }
 ]
