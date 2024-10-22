@@ -3,14 +3,12 @@ import { defineConfig } from 'rspress/config';
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
-  title: 'Rspress',
+  title: 'Sine-Exercise',
   description: 'Rspack-based Static Site Generator',
-  icon: '/rspress-icon.png',
+  icon: '/sine-icon.png',
   base: '/sine-exercise',
-  logo: {
-    light: '/rspress-light-logo.png',
-    dark: '/rspress-dark-logo.png',
-  },
+  logo: '/sine-icon.png',
+  logoText: 'SINE-EXERCISE',
   themeConfig: {
     socialLinks: [
       { icon: 'github', mode: 'link', content: 'https://github.com/web-infra-dev/rspress' },

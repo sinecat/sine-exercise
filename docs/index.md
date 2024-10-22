@@ -2,9 +2,9 @@
 pageType: home
 
 hero:
-  name: Sine-Exercises
-  text: You can do exercises.
-  tagline: Sine-Exercises
+  name: <span class="hero-name">SINE-EXERCISE</span>
+  text: You can do exercises here
+  tagline: SUITABLE FOR YOU
   actions:
     - theme: brand
       text: Quick Start
@@ -13,15 +13,15 @@ hero:
       text: Github
       link: https://github.com/web-infra-dev/rspress
   image:
-    src: /rspress-icon.png
+    src: /test-icon.png
     alt: Rspress Logo
 features:
-  - title: Blazing fast build speed
-    icon: 🏃🏻‍♀️
-  - title: Support for MDX content writing
-    icon: 📦
-  - title: Built-in full-text search
-    icon: 🎨
+#  - title: Blazing fast build speed
+#    icon: 🏃🏻‍♀️
+#  - title: Support for MDX content writing
+#    icon: 📦
+#  - title: Built-in full-text search
+#    icon: 🎨
 #  - title: Simpler I18n solution
 #    details: With the built-in I18n solution, you can easily provide multi-language support for documents or components.
 #    icon: 🌍

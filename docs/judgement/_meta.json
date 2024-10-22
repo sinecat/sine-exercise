@@ -1,12 +1,17 @@
 [
   {
-    "name": "basis",
-    "label": "basis",
-    "type": "dir"
+    "type": "file",
+    "name": "index",
+    "label": "overview"
   },
   {
+    "type": "dir",
+    "name": "basis",
+    "label": "basis"
+  },
+  {
+    "type": "dir",
     "name": "logic_600",
-    "label": "logic_600",
-    "type": "dir"
+    "label": "logic_600"
   }
 ]

@@ -1,4 +1,3 @@
-// @ts-ignore
 import React, {useState, useMemo} from 'react';
 import {
     Button,

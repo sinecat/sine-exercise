@@ -27,7 +27,6 @@ const SubmitCard = () => {
         });
     };
 
-    // @ts-ignore
     return <Card>
         <Flex gap="middle">
             <Button type="primary" onClick={handleClickSubmit}>提交</Button>
