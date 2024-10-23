@@ -20,19 +20,13 @@ import useThemeListener from "../hooks/useTheme";
 const {Text} = Typography;
 const {confirm} = Modal;
 
-const questions = Array.from({length: 20}, (_, i) => ({
-    index: i + 1,
-}));
-
-const siteTheme = localStorage.getItem('rspress-theme-appearance') || ''
-
 const AnswerCardButton = ({children, screenSize, ...rest}: ButtonProps & { screenSize: ScreenSizeType }) => {
     const smScreenCls = useEmotionCss(() => (
         {
             position: 'fixed',
             bottom: 30,
             right: 10,
-            zIndex:999
+            zIndex: 999
         }
     ))
 
@@ -41,7 +35,7 @@ const AnswerCardButton = ({children, screenSize, ...rest}: ButtonProps & { scree
             position: 'fixed',
             bottom: 30,
             right: 10,
-            zIndex:999
+            zIndex: 999
         }
     ))
 
@@ -50,7 +44,7 @@ const AnswerCardButton = ({children, screenSize, ...rest}: ButtonProps & { scree
             position: 'fixed',
             right: '18%',
             bottom: 30,
-            zIndex:999
+            zIndex: 999
         }
     ))
 
@@ -67,7 +61,7 @@ const AnswerCardButton = ({children, screenSize, ...rest}: ButtonProps & { scree
 const AnswerCard = () => {
     const [open, setOpen] = useState(false);
     const size = useWindowSize();
-    const [siteTheme,setSiteTheme] = useThemeListener()
+    const [siteTheme, setSiteTheme] = useThemeListener()
 
     const {currentQuestions, setCurrentQuestion, setAllQuestionsCorrect, resetAllQuestions} = useQuestionStore();
 
@@ -119,8 +113,8 @@ const AnswerCard = () => {
     };
 
     const handleFreshTheme = () => {
-        const currentTheme = localStorage.getItem('rspress-theme-appearance')
-        setSiteTheme(currentTheme||'light')
+        const currentTheme = localStorage && localStorage.getItem('rspress-theme-appearance')
+        setSiteTheme(currentTheme || 'light')
         setOpen(false)
     }
 
@@ -169,7 +163,7 @@ const AnswerCard = () => {
                                     >
                                         <Space size={5}>
                                             <Text
-                                                style={{margin:0}}
+                                                style={{margin: 0}}
                                                 type={!item.answer && item.isCorrect === -1 ? 'warning' : item.isCorrect !== -1 ? item.isCorrect ? 'success' : 'danger' : undefined}>
                                                 {item.answer ? `${item.answer}` : '未答'}
                                             </Text>
