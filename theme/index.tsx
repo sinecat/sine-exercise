@@ -4,8 +4,9 @@ import MobileMenuBox from "./components/MobileMenuBox";
 // 以下展示所有的 Props
 const Layout = () => (
     <>
-        <Theme.Layout/>
-        <MobileMenuBox/>
+        <Theme.Layout
+            afterDoc={<MobileMenuBox/>}
+        />
     </>
 );
 

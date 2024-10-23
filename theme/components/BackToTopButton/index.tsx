@@ -1,5 +1,5 @@
 import React from 'react';
-import SineButtonContainer from "./SineButtonContainer.tsx";
+import SineButtonContainer from "../SineButtonContainer";
 import {UpOutlined} from "@ant-design/icons";
 
 const BackToTopButton = () => {

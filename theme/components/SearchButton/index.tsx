@@ -1,5 +1,5 @@
 import {Search} from "rspress/theme";
-import SineButtonContainer from "./SineButtonContainer.tsx";
+import SineButtonContainer from "../SineButtonContainer";
 
 const SearchButton = () => {
     return (
