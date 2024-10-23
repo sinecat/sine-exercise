@@ -1,5 +1,7 @@
 import * as path from 'path';
 import { defineConfig } from 'rspress/config';
+// @ts-ignore
+import katex from 'rspress-plugin-katex';
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -9,6 +11,7 @@ export default defineConfig({
   base: '/sine-exercise',
   logo: '/sine-icon.png',
   logoText: 'SINE-EXERCISE',
+  plugins: [katex()],
   themeConfig: {
     socialLinks: [
       { icon: 'github', mode: 'link', content: 'https://github.com/web-infra-dev/rspress' },
