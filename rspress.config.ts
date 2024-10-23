@@ -1,6 +1,5 @@
 import * as path from 'path';
 import { defineConfig } from 'rspress/config';
-// @ts-ignore
 import katex from 'rspress-plugin-katex';
 
 export default defineConfig({
@@ -16,5 +15,6 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', mode: 'link', content: 'https://github.com/web-infra-dev/rspress' },
     ],
+    enableContentAnimation: true, //页面转成动画
   },
 });
