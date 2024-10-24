@@ -16,5 +16,6 @@ export default defineConfig({
       { icon: 'github', mode: 'link', content: 'https://github.com/web-infra-dev/rspress' },
     ],
     enableContentAnimation: true, //页面转成动画
+    enableAppearanceAnimation: true, //主题切换动画效果
   },
 });
