@@ -26,7 +26,7 @@ export default defineConfig({
         ],
         enableContentAnimation: true, //页面转成动画
         enableAppearanceAnimation: true, //主题切换动画效果
-        lastUpdated: true, //是否显示最后的更新时间
+        // lastUpdated: true, //是否显示最后的更新时间
         lastUpdatedText: '最后更新时间',
         outlineTitle: 'Catalogue', //在右侧边栏中配置大纲的标题
     },
