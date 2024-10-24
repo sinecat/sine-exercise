@@ -41,6 +41,9 @@ importers:
       rspress-plugin-katex:
         specifier: ^0.3.0
         version: 0.3.0(rspress@1.34.1(webpack@5.95.0))
+      rspress-plugin-reading-time:
+        specifier: ^0.3.0
+        version: 0.3.0(rspress@1.34.1(webpack@5.95.0))
       zustand:
         specifier: ^5.0.0
         version: 5.0.0(@types/react@18.3.11)(react@18.3.1)
@@ -2122,6 +2125,9 @@ packages:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
 
+  reading-time@1.5.0:
+    resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
+
   reduce-configs@1.0.0:
     resolution: {integrity: sha512-/JCYSgL/QeXXsq0Lv/7kOZfqvof7vyzHWfyNQPt3c6vc73mU4WRyT8RJ6ZH5Ci08vUOqXwk7jkZy6BycHTDD9w==}
 
@@ -2196,6 +2202,11 @@ packages:
 
   rspress-plugin-katex@0.3.0:
     resolution: {integrity: sha512-gKT4hmXJIoKNEGOgkrWg9oB7FaEDEEpbsPpcxbGrmjs9j4jpKRfi64r9v5fnqmLSJAHNPV9OjDq6MWiGKEjqWA==}
+    peerDependencies:
+      rspress: '*'
+
+  rspress-plugin-reading-time@0.3.0:
+    resolution: {integrity: sha512-lDO0TJw31bEFVmUnuMHPtLpp7G6wF2hRtIC4odHPotit4EPFq/8AhgnNsnKIHJ8aHTYNCJZY9RtlkXrziZi7aw==}
     peerDependencies:
       rspress: '*'
 
@@ -5512,6 +5523,8 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
+  reading-time@1.5.0: {}
+
   reduce-configs@1.0.0:
     dependencies:
       browserslist: 4.24.0
@@ -5686,6 +5699,15 @@ snapshots:
       katex: 0.16.11
       rehype-katex: 7.0.1
       remark-math: 6.0.0
+      rspress: 1.34.1(webpack@5.95.0)
+      rspress-plugin-devkit: 0.3.0(rspress@1.34.1(webpack@5.95.0))
+    transitivePeerDependencies:
+      - supports-color
+
+  rspress-plugin-reading-time@0.3.0(rspress@1.34.1(webpack@5.95.0)):
+    dependencies:
+      '@rspress/shared': 1.34.1
+      reading-time: 1.5.0
       rspress: 1.34.1(webpack@5.95.0)
       rspress-plugin-devkit: 0.3.0(rspress@1.34.1(webpack@5.95.0))
     transitivePeerDependencies:

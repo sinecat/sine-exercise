@@ -1,14 +1,21 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import SineButtonContainer from "../SineButtonContainer";
 import {DownOutlined} from "@ant-design/icons";
+import {useScroll} from "ahooks";
 
 const BackToBottomButton = () => {
-    const handleClick = ()=>{
-        window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'})
+    const position = useScroll()
+
+    const isShow = useMemo(() => {
+        return position && position.top < document.body.scrollHeight-window.innerHeight-1 || false
+    }, [position?.top])
+
+    const handleClick = () => {
+        window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})
     }
 
     return (
-        <SineButtonContainer
+        isShow && <SineButtonContainer
             onClick={handleClick}
         >
             <DownOutlined className="text-gray-500"/>
