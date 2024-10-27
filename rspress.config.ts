@@ -2,6 +2,7 @@ import * as path from 'path';
 import {defineConfig} from 'rspress/config';
 import katex from 'rspress-plugin-katex';
 import readingTime from 'rspress-plugin-reading-time';
+import superSub from 'rspress-plugin-supersub';
 
 export default defineConfig({
     root: path.join(__dirname, 'docs'),
@@ -13,6 +14,7 @@ export default defineConfig({
     logoText: 'SINE-EXERCISE',
     plugins: [
         katex(), //latex解析
+        superSub(), //上标下标
         readingTime({ //文档预计阅读时间
             defaultLocale: 'zh-CN',
         })

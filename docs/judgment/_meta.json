@@ -1,17 +1,17 @@
 [
   {
     "type": "file",
-    "name": "index",
-    "label": "overview"
+    "name": "definition-judge/chapter-1",
+    "label": "定义判断"
   },
   {
     "type": "dir",
     "name": "logic-judge",
-    "label": "logic-judge"
+    "label": "逻辑判断"
   },
   {
     "type": "dir",
     "name": "logic_600",
-    "label": "logic_600"
+    "label": "逻辑600题"
   }
 ]

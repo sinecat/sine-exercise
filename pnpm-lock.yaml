@@ -44,6 +44,9 @@ importers:
       rspress-plugin-reading-time:
         specifier: ^0.3.0
         version: 0.3.0(rspress@1.34.1(webpack@5.95.0))
+      rspress-plugin-supersub:
+        specifier: ^0.3.0
+        version: 0.3.0(rspress@1.34.1(webpack@5.95.0))
       zustand:
         specifier: ^5.0.0
         version: 5.0.0(@types/react@18.3.11)(react@18.3.1)
@@ -2207,6 +2210,11 @@ packages:
 
   rspress-plugin-reading-time@0.3.0:
     resolution: {integrity: sha512-lDO0TJw31bEFVmUnuMHPtLpp7G6wF2hRtIC4odHPotit4EPFq/8AhgnNsnKIHJ8aHTYNCJZY9RtlkXrziZi7aw==}
+    peerDependencies:
+      rspress: '*'
+
+  rspress-plugin-supersub@0.3.0:
+    resolution: {integrity: sha512-VpC7VqMLNfwfF0Y21pD8nVjWRCLAT8xVZ/+DPKgL/iyCNuzk9pplTkB2W8sJPyu1+7CklzKYMAdx8vYwpyf+ew==}
     peerDependencies:
       rspress: '*'
 
@@ -5710,6 +5718,15 @@ snapshots:
       reading-time: 1.5.0
       rspress: 1.34.1(webpack@5.95.0)
       rspress-plugin-devkit: 0.3.0(rspress@1.34.1(webpack@5.95.0))
+    transitivePeerDependencies:
+      - supports-color
+
+  rspress-plugin-supersub@0.3.0(rspress@1.34.1(webpack@5.95.0)):
+    dependencies:
+      '@rspress/shared': 1.34.1
+      rspress: 1.34.1(webpack@5.95.0)
+      rspress-plugin-devkit: 0.3.0(rspress@1.34.1(webpack@5.95.0))
+      throttle-debounce: 5.0.2
     transitivePeerDependencies:
       - supports-color
 
