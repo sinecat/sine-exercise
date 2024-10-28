@@ -7,11 +7,11 @@ hero:
   tagline: SUITABLE FOR YOU
   actions:
     - theme: brand
-      text: Quick Start
-      link: /hello
-    - theme: alt
-      text: Github
-      link: https://github.com/web-infra-dev/rspress
+      text: judgment
+      link: /judgment/definition-judge/chapter-1
+#    - theme: alt
+#      text: Github
+#      link: https://github.com/web-infra-dev/rspress
   image:
     src: /test-icon.png
     alt: Rspress Logo
