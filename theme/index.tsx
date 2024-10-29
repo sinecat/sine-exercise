@@ -7,7 +7,7 @@ const Layout = () => (
     <>
         <Theme.Layout
             afterDoc={<MobileMenuBox/>}
-            afterNavMenu={<Button style={{margin:'0 16px'}}>Login</Button>}
+            afterNavMenu={<Button style={{margin:'0 16px'}}>Activate</Button>}
         />
     </>
 );
