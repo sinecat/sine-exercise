@@ -1,16 +1,18 @@
 import Theme from 'rspress/theme';
 import MobileMenuBox from "./components/MobileMenuBox";
 import {Button} from "antd";
+import UserInfo from "./components/UserInfo";
 
 // 以下展示所有的 Props
-const Layout = () => (
-    <>
+const Layout = () => {
+
+    return <>
         <Theme.Layout
             afterDoc={<MobileMenuBox/>}
-            afterNavMenu={<Button style={{margin:'0 16px'}}>Activate</Button>}
+            afterNavMenu={<UserInfo/>}
         />
     </>
-);
+};
 
 export default {
     ...Theme,

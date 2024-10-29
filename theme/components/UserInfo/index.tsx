@@ -1,10 +1,87 @@
-import React from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
+import {Button, Card, Flex, Form, Image, Input, message, Modal} from "antd";
+import {useUserInfoStore} from "../../../modal/userInfoStore.ts";
+import {verifyCode} from '../../../lib/bcryptUtils.ts'
+import Auth from "../../../lib/auth.tsx";
+
+type FormProps = {
+    code: string;
+}
 
 const UserInfo = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const {currentUserInfo, setCurrentUserInfo} = useUserInfoStore();
+    const [form] = Form.useForm();
+
+
+    const isActive = useMemo(() => (
+        !!currentUserInfo.username
+    ), [currentUserInfo])
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
+    const handleSubmit = async (formValues: FormProps) => {
+        const {code} = formValues;
+        const isActive = await verifyCode(code)
+        if (isActive) {
+            setCurrentUserInfo({username: 'sine'})
+            message.success('激活成功');
+            handleOk();
+            return
+        }
+        message.error('激活码错误！请加入群组，获取激活码！');
+    }
+
+    const handleClickSubmit = () => {
+        form.submit();
+    }
+
     return (
-        <div>
-            
-        </div>
+        <>
+            {/*<Auth/>*/}
+            <Button style={{margin: '0 16px'}} onClick={showModal}>{isActive ? '已激活' : '激活'}</Button>
+            <Modal open={isModalOpen} onCancel={handleCancel} footer={!isActive && [
+                <Button key="submit" type="primary" onClick={handleClickSubmit}>
+                    提交
+                </Button>,
+            ]}>
+                <Flex style={{marginTop: 40}} justify='center' gap={20}>
+                    <Card title={'加入我们'}>
+                        <Image
+                            width={100}
+                            src="/group-code.png"
+                        />
+                    </Card>
+                    <Card title={'1元爱心充电'}>
+                        <Image
+                            width={100}
+                            src="/collection-code.png"
+                        />
+                    </Card>
+                </Flex>
+                {!isActive && <Flex style={{marginTop: 40}} justify='center'>
+                    <Form
+                        layout={'vertical'}
+                        form={form}
+                        onFinish={handleSubmit}
+                    >
+                        <Form.Item label={'激活码：'} name={'code'}>
+                            <Input.OTP formatter={(str) => str.toUpperCase()}/>
+                        </Form.Item>
+                    </Form>
+                </Flex>}
+            </Modal>
+        </>
     );
 };
 
