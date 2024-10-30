@@ -3,6 +3,7 @@ import {useUserInfoStore} from "../../modal/userInfoStore";
 import './styles.less'
 import {Card, Flex, Image, Typography} from "antd";
 import {useDark} from 'rspress/runtime';
+import { normalizeImagePath } from 'rspress/runtime';
 
 const {Title, Text} = Typography;
 
@@ -30,7 +31,7 @@ const AuthContainer = (props: { children?: any[] }) => {
                                     visible: false,
                                     mask: false
                                 }}
-                                src="/active_tip.jpg"
+                                src={normalizeImagePath('/active_tip.jpg')}
                             />
                             <Flex className='tip-color' vertical align='center'>
                                 <Title style={{color: dark ? '#ffffff' : ''}} level={2}>继续观看需要激活</Title>

@@ -3,6 +3,7 @@ import {Button, Card, Flex, Form, Image, Input, message, Modal} from "antd";
 import {useUserInfoStore} from "../../../modal/userInfoStore.ts";
 import {verifyCode} from '../../../lib/bcryptUtils'
 import Auth from "../../../lib/auth.tsx";
+import {normalizeImagePath} from "rspress/runtime";
 
 type FormProps = {
     code: string;
@@ -59,13 +60,13 @@ const UserInfo = () => {
                     <Card title={'加入我们'}>
                         <Image
                             width={100}
-                            src="/group-code.png"
+                            src={normalizeImagePath('/group-code.png')}
                         />
                     </Card>
                     <Card title={'1元爱心充电'}>
                         <Image
                             width={100}
-                            src="/collection-code.png"
+                            src={normalizeImagePath('/collection-code.png')}
                         />
                     </Card>
                 </Flex>
