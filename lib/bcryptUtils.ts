@@ -1,5 +1,6 @@
+import {ENCRYPTED_ACTIVATION_CODE} from "../constant";
+// @ts-ignore
 import bcrypt from 'bcryptjs'
-import {currentCode} from "../constant";
 
 const hashCode = async (password: string, saltRounds = 7) => {
     try {
@@ -9,7 +10,7 @@ const hashCode = async (password: string, saltRounds = 7) => {
     }
 }
 
-const verifyCode = async (password: string, _currentCode=currentCode) => {
+const verifyCode = async (password:string, _currentCode = ENCRYPTED_ACTIVATION_CODE) => {
     try {
         const result = await bcrypt.compare(password, _currentCode);
         if (result) {

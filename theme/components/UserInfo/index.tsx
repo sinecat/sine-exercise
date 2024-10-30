@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {Button, Card, Flex, Form, Image, Input, message, Modal} from "antd";
 import {useUserInfoStore} from "../../../modal/userInfoStore.ts";
-import {verifyCode} from '../../../lib/bcryptUtils.ts'
+import {verifyCode} from '../../../lib/bcryptUtils'
 import Auth from "../../../lib/auth.tsx";
 
 type FormProps = {
@@ -48,8 +48,8 @@ const UserInfo = () => {
 
     return (
         <>
-            {/*<Auth/>*/}
-            <Button style={{margin: '0 16px'}} onClick={showModal}>{isActive ? '已激活' : '激活'}</Button>
+            <Auth/>
+            <Button style={{margin: '0 16px'}} onClick={showModal}>{isActive ? '加入' : '激活'}</Button>
             <Modal open={isModalOpen} onCancel={handleCancel} footer={!isActive && [
                 <Button key="submit" type="primary" onClick={handleClickSubmit}>
                     提交

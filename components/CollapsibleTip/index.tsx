@@ -10,7 +10,6 @@ type CollapsibleTipProps = {
 
 const CollapsibleTip = (props: CollapsibleTipProps) => {
     const {title = "解析", children, type = 'note', collapsible = false} = props
-
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleCollapse = () => {
