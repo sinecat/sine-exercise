@@ -1,13 +1,13 @@
 [
   {
-    "type": "file",
-    "name": "definition-judge/chapter-1",
+    "type": "dir",
+    "name": "definition-judge",
     "label": "定义判断"
   },
   {
     "type": "dir",
     "name": "logic-judge",
-    "label": "逻辑判断"
+    "label": "花生逻辑判断"
   },
   {
     "type": "dir",
