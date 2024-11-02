@@ -22,6 +22,9 @@ export default defineConfig({
     route: {
         cleanUrls: true, // 去除路由url中的.html
     },
+    mediumZoom: {
+        selector: '.rspress-doc img',
+    },
     themeConfig: {
         socialLinks: [
             // {icon: 'github', mode: 'link', content: 'https://github.com/web-infra-dev/rspress'},
