@@ -17,7 +17,16 @@ export default defineConfig({
         superSub(), //上标下标
         readingTime({ //文档预计阅读时间
             defaultLocale: 'zh-CN',
-        })
+        }),
+        // 暂时启用没有效果
+        // live2d({
+        //     models: [
+        //         {
+        //             path: 'https://model.oml2d.com/Senko_Normals/senko.model3.json',
+        //             position: [-10, 20],
+        //         },
+        //     ],
+        // }),
     ],
     route: {
         cleanUrls: true, // 去除路由url中的.html

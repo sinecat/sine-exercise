@@ -1,8 +1,21 @@
 [
   {
-    "text": "Judgment",
-    "link": "/judgment/definition-judge/niejia-definition-judge",
-    "activeMatch": "/judgment/definition-judge/niejia-definition-judge"
+    "text": "判断",
+    "items": [
+      {
+        "text": "定义判断",
+        "link": "/judgment/definition-judge/niejia-definition-judge"
+      },
+      {
+        "text": "逻辑判断",
+        "link": "/judgment/logic-judge/chapter-2"
+      },
+      {
+        "text": "逻辑600",
+        "link": "/judgment/logic-600/练习题1"
+      }
+    ],
+    "activeMatch": "/judgment/definition-judge/chapter-1"
   },
   {
     "text": "Hello World",
