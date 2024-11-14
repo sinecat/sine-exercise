@@ -5,7 +5,7 @@ const HomeSelectCard = () => {
   return (
     // <div className="bg-blue-primary rounded-tl-2xl rounded-tb-2xl">
     <div className="">
-      <img src={normalizeImagePath('/test-icon.png')} alt="test-icon" />
+      <img className="animate__animated animate__backInRight" src={normalizeImagePath('/test-icon.png')} alt="test-icon" />
     </div>
   );
 };
