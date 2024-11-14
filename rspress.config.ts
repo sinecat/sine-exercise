@@ -8,6 +8,7 @@ export default defineConfig({
     root: path.join(__dirname, 'docs'),
     title: 'Sine-Exercise',
     description: 'Rspack-based Static Site Generator',
+    globalStyles: path.join(__dirname, 'styles/index.less'),
     icon: '/sine-icon.png',
     base: '/sine-exercise',
     logo: '/sine-icon.png',
@@ -15,9 +16,9 @@ export default defineConfig({
     plugins: [
         katex(), //latex解析
         superSub(), //上标下标
-        readingTime({ //文档预计阅读时间
-            defaultLocale: 'zh-CN',
-        }),
+        // readingTime({ //文档预计阅读时间
+        //     defaultLocale: 'zh-CN',
+        // }),
         // 暂时启用没有效果
         // live2d({
         //     models: [
