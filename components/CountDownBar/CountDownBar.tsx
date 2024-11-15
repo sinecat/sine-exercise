@@ -16,28 +16,26 @@ const CountDownBar = () => {
     return (
         <div
             className="flex items-center w-80 px-5 py-3 rounded-full shadow-md bg-white border border-gray-50">
-            {/* Left Icon */}
-            <div className="mr-2">
-                <ClockCircleOutlined className="text-2xl text-green-primary"/>
-            </div>
+            {/*<div className="mr-2">*/}
+            {/*    <ClockCircleOutlined className="text-2xl text-green-primary"/>*/}
+            {/*</div>*/}
 
-            {/* Content */}
             <div className="flex gap-2 flex-col ml-2">
                 <span className="text-gray-500 text-sm">Distance Exam</span>
-                <div className="flex gap-6 text-black font-semibold text-xl">
+                <div className="flex gap-4 text-black font-semibold text-xl">
                     <div>
                         <span className={'inline-block text-green-primary pr-1'}>{days}</span><span>d</span>
                     </div>
                     <div>
-                        <span className={'inline-block text-green-primary pr-1'}>{hours}</span><span>h</span>
+                        <span className={'w-8 text-center inline-block text-green-primary'}>{hours}</span><span>h</span>
                     </div>
                     <div>
                         <span
-                            className={'inline-block text-green-primary pr-1 animate-bounce'}>{minutes}</span><span>m</span>
+                            className={'w-8 text-center inline-block text-green-primary animate-bounce'}>{minutes}</span><span>m</span>
                     </div>
                     <div>
                         <span
-                            className={'inline-block text-green-primary pr-1 animate-bounce animation-delay-500'}>{seconds}</span><span>s</span>
+                            className={'w-8 text-center inline-block text-green-primary animate-bounce animation-delay-500'}>{seconds}</span><span>s</span>
                     </div>
                 </div>
             </div>
