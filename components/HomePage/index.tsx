@@ -10,13 +10,13 @@ const SelectCard = () => {
                 <HomeBanner/>
                 <HomeSelectCard/>
             </div>
-            <footer className="w-full flex gap-2 lg:gap-10 flex-col lg:flex-row justify-between items-center mt-20 lg:mt-40 lg:px-10">
-                <SineCard className="animate__animated animate__backInDown animation-delay-1000" title="Speech Understanding"/>
-                <SineCard className="animate__animated animate__backInDown animation-delay-1200" title="Judgment Reasoning"/>
-                <SineCard className="animate__animated animate__backInDown animation-delay-1400" title="Information Analysis"/>
-                <SineCard className="animate__animated animate__backInDown animation-delay-1600" title="Quantitative Relation"/>
-                <SineCard className="animate__animated animate__backInDown animation-delay-1800" title="Expository Essay"/>
-            </footer>
+            {/*<footer className="w-full flex gap-2 lg:gap-10 flex-col lg:flex-row justify-between items-center mt-20 lg:mt-40 lg:px-10">*/}
+            {/*    <SineCard className="animate__animated animate__backInDown animation-delay-1000" title="Speech Understanding"/>*/}
+            {/*    <SineCard className="animate__animated animate__backInDown animation-delay-1200" title="Judgment Reasoning"/>*/}
+            {/*    <SineCard className="animate__animated animate__backInDown animation-delay-1400" title="Information Analysis"/>*/}
+            {/*    <SineCard className="animate__animated animate__backInDown animation-delay-1600" title="Quantitative Relation"/>*/}
+            {/*    <SineCard className="animate__animated animate__backInDown animation-delay-1800" title="Expository Essay"/>*/}
+            {/*</footer>*/}
         </div>
     );
 };

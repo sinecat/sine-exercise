@@ -15,7 +15,7 @@ const CountDownBar = () => {
 
     return (
         <div
-            className="flex items-center w-80 px-5 py-3 rounded-full shadow-md bg-white border border-gray-50">
+            className="flex items-center w-fit px-6 py-3 rounded-full shadow-md bg-white border border-gray-50">
             {/*<div className="mr-2">*/}
             {/*    <ClockCircleOutlined className="text-2xl text-green-primary"/>*/}
             {/*</div>*/}
@@ -31,11 +31,11 @@ const CountDownBar = () => {
                     </div>
                     <div>
                         <span
-                            className={'w-8 text-center inline-block text-green-primary animate-bounce'}>{minutes}</span><span>m</span>
+                            className={'w-8 text-center inline-block text-green-primary'}>{minutes}</span><span>m</span>
                     </div>
                     <div>
                         <span
-                            className={'w-8 text-center inline-block text-green-primary animate-bounce animation-delay-500'}>{seconds}</span><span>s</span>
+                            className={'w-8 text-center inline-block text-green-primary'}>{seconds}</span><span>s</span>
                     </div>
                 </div>
             </div>
