@@ -8,10 +8,5 @@
     "type": "dir",
     "name": "logic-judge",
     "label": "花生逻辑判断"
-  },
-  {
-    "type": "dir",
-    "name": "logic-600",
-    "label": "逻辑600题"
   }
 ]
