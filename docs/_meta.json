@@ -22,7 +22,11 @@
     "items": [
       {
         "text": "逻辑600题",
-        "link": "/exercise/logic-600/练习题1"
+        "link": "logic-600/练习题1"
+      },
+      {
+        "text": "言语必做100题",
+        "link": "speech-must-do-100/section-1"
       }
     ]
   }
