@@ -9,7 +9,7 @@ function formatDate(year: number, month: number, day: number): string {
 
 const CountDownBar = () => {
     const [countdown, formattedRes] = useCountDown({
-        targetDate: `2025-3-16 23:59:59`,
+        targetDate: `2025-2-27 23:59:59`,
     });
     const {days, hours, minutes, seconds} = formattedRes;
 
@@ -27,15 +27,15 @@ const CountDownBar = () => {
                         <span className={'inline-block text-green-primary pr-1'}>{days}</span><span>d</span>
                     </div>
                     <div>
-                        <span className={'w-8 text-center inline-block text-green-primary'}>{hours}</span><span>h</span>
+                        <span className={'w-chapter-8.md text-center inline-block text-green-primary'}>{hours}</span><span>h</span>
                     </div>
                     <div>
                         <span
-                            className={'w-8 text-center inline-block text-green-primary'}>{minutes}</span><span>m</span>
+                            className={'w-chapter-8.md text-center inline-block text-green-primary'}>{minutes}</span><span>m</span>
                     </div>
                     <div>
                         <span
-                            className={'w-8 text-center inline-block text-green-primary'}>{seconds}</span><span>s</span>
+                            className={'w-chapter-8.md text-center inline-block text-green-primary'}>{seconds}</span><span>s</span>
                     </div>
                 </div>
             </div>
