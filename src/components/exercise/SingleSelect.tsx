@@ -1,16 +1,17 @@
 import React from 'react';
 import {clsx} from "clsx";
+import {cn} from "../../lib/utils";
 
 interface SingleSelectProps {
     options: React.ReactNode[];
     value?: string;
     onChange: (value: string) => void;
-    currentAnswer?: "A"|"B"|"C"|"D"; // 正确选项
+    correctAnswer?: "A" | "B" | "C" | "D"; // 正确选项
     showCorrectAnswer?: boolean; // 是否显示正确答案
 }
 
 const SingleSelect: React.FC<SingleSelectProps> = (props: SingleSelectProps) => {
-    const {options, value, onChange, currentAnswer, showCorrectAnswer = false} = props;
+    const {options, value, onChange, correctAnswer, showCorrectAnswer = false} = props;
     const handleChange = (value: string) => {
         onChange(value)
     }
@@ -20,19 +21,18 @@ const SingleSelect: React.FC<SingleSelectProps> = (props: SingleSelectProps) => 
             {options.map((text, index) => {
                 const _value = String.fromCharCode(65 + index);
                 const isSelected = value === _value;
-                const isCorrect = _value === currentAnswer;
+                const isCorrect = _value === correctAnswer;
                 const isWrong = showCorrectAnswer && isSelected && !isCorrect;
 
                 return (
                     <label
                         key={index}
-                        className={clsx(
+                        className={cn(
                             'flex items-center px-4 py-2 border border-transparent rounded-lg cursor-pointer transition-all',
                             {
-                                "border": isSelected,
-                                'bg-green-50 border-green-300': isSelected && !showCorrectAnswer, // 正常选中
-                                'bg-red-50 border-red-300': isWrong, // 错误选中
-                                'bg-green-50 border border-green-300': showCorrectAnswer && isCorrect, // 显示正确答案
+                                'bg-success border-success': isSelected && !showCorrectAnswer, // 正常选中
+                                'bg-error border-error': isWrong, // 错误选中
+                                'bg-success border border-success': showCorrectAnswer && isCorrect, // 显示正确答案
                                 'hover:bg-gray-50': !showCorrectAnswer && !isSelected, // 默认
                             },
                         )}
@@ -49,10 +49,10 @@ const SingleSelect: React.FC<SingleSelectProps> = (props: SingleSelectProps) => 
                         {/* 圆圈 */}
                         <div
                             className={clsx(
-                                'w-7 h-7 text-center leading-[26px] shrink-0 rounded-full border mr-3',
+                                'w-7 h-7 text-center leading-[27px] shrink-0 rounded-full mr-3',
                                 {
-                                    'bg-green-500 text-white border-green-500': isSelected || (showCorrectAnswer && isCorrect), // 正确选中
-                                    'bg-red-500 text-white border-red-500': isWrong, // 错误选中
+                                    'bg-[#32CA99] text-white': !showCorrectAnswer&&isSelected || (showCorrectAnswer && isCorrect), // 正确选中
+                                    'bg-[#EF4444] text-white': isWrong, // 错误选中
                                     '': !isSelected || (showCorrectAnswer && !isCorrect && !isWrong), // 默认
                                 },
                             )}

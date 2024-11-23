@@ -8,7 +8,28 @@ module.exports = {
             },
             colors: {
                 'green-primary': '#70C549',
-                'blue-primary': 'var(--rp-c-brand)'
+                'blue-primary': 'var(--rp-c-brand)',
+                // 'bg-success':'var(--rp-container-tip-bg)',
+                // 'border-success': 'var(rp-container-tip-border)',
+                // 'bg-error': 'var(--rp-container-danger-bg)',
+                // 'border-error': 'var(rp-container-danger-border)',
+            },
+            backgroundColor: {
+                'success': '#EEFAF7',
+                'error': '#FFF6F3',
+                'background':'var(--rp-c-bg)'
+            },
+            borderColor: {
+                'success': '#94E3C9',
+                'error': '#FFBBA4',
+                'error-dark': '#FF561B',
+                'default': '#E1E4E8'
+            },
+            textColor: {
+                'success': '#94E3C9',
+                'error': '#FFBBA4',
+                'error-dark': '#FF561B',
+                'default': '#E1E4E8'
             },
             animationDelay: {
                 '100': '100ms',
@@ -21,6 +42,9 @@ module.exports = {
                 '1400': '1400ms',
                 '1600': '1600ms',
                 '1800': '1800ms',
+            },
+            boxShadow: {
+                'top': '0px -8px 12px -10px rgba(0, 0, 0, 0.1)',
             },
         },
     },
