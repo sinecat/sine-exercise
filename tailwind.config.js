@@ -2,6 +2,10 @@ module.exports = {
     content: ['./src/**/*.tsx', './docs/**/*.mdx', './components/**/*.tsx', './theme/**/*.tsx'],
     theme: {
         extend: {
+            screens: {
+                'lg': '1280px', // 修改 lg 断点为 1280px
+                'md': '960px'
+            },
             colors: {
                 'green-primary': '#70C549',
                 'blue-primary': 'var(--rp-c-brand)'

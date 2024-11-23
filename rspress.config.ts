@@ -39,6 +39,7 @@ export default defineConfig({
         socialLinks: [
             // {icon: 'github', mode: 'link', content: 'https://github.com/web-infra-dev/rspress'},
         ],
+        // enableScrollToTop: true, //滚动到顶部按钮
         enableContentAnimation: true, //页面转成动画
         enableAppearanceAnimation: true, //主题切换动画效果
         // lastUpdated: true, //是否显示最后的更新时间

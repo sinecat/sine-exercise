@@ -11,7 +11,7 @@ const Layout = () => {
 
     return <>
         <Theme.Layout
-            afterDoc={<MobileMenuBox/>}
+            // afterDoc={<MobileMenuBox/>}
             afterNavMenu={<UserInfo/>}
             afterOutline={<ScrollProgress />}
         />
