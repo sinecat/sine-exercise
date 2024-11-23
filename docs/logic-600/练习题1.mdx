@@ -1,6 +1,7 @@
 import AnswerRadioBox from "../../components/AnswerRadioBox";
 import AnswerCard from "../../components/AnswerCard";
-import SingleSelect from "../../src/components/exercise/SingleSelect"
+import QuestionAndAnswersCard from "../../src/components/exercise/QuestionAndAnswersCard"
+import CollapsibleTip from "../../components/CollapsibleTip"
 
 <AnswerCard/>
 
@@ -14,20 +15,18 @@ import SingleSelect from "../../src/components/exercise/SingleSelect"
 
 以下哪项如果为真，最能支持上述结论：
 
-1. 与未饮用酒精的实验鼠相对照，“醉酒”的实验鼠呆立不动的时间会变得更长
-2. 在未分组之前，如果不再次给大白鼠以电击，大白鼠在“恐怖箱”中呆立不动的 时间和之前一样
-3. 与未饮用酒精的实验鼠相对照，“醉酒”实验鼠呆立不动的时间较短
-4. 在未分组之前，如果继续给大白鼠以电击，大白鼠在“恐怖箱”中呆立不动的时间越来越短
-<AnswerRadioBox index={0} questionNum={0}/>
-<SingleSelect
-    options={
-        [
+
+<QuestionAndAnswersCard
+    options={[
             "与未饮用酒精的实验鼠相对照，“醉酒”的实验鼠呆立不动的时间会变得更长",
             "在未分组之前，如果不再次给大白鼠以电击，大白鼠在“恐怖箱”中呆立不动的时间和之前一样",
             "与未饮用酒精的实验鼠相对照，“醉酒”实验鼠呆立不动的时间较短",
-            "在未分组之前，如果继续给大白鼠以电击，大白鼠在“恐怖箱”中呆立不动的时间越来越短"]}
-    correctAnswer={"B"}
-/>
+            "在未分组之前，如果继续给大白鼠以电击，大白鼠在“恐怖箱”中呆立不动的时间越来越短"
+            ]}
+    currentAnswer={"C"}
+>
+    123
+</QuestionAndAnswersCard>
 #### 2
 
 (2019年贵州事业单位 58%)
