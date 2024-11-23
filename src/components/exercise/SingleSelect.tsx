@@ -11,7 +11,6 @@ interface SingleSelectProps {
 
 const SingleSelect: React.FC<SingleSelectProps> = (props: SingleSelectProps) => {
     const {options, value, onChange, currentAnswer, showCorrectAnswer = false} = props;
-
     const handleChange = (value: string) => {
         onChange(value)
     }

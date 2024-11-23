@@ -1,5 +1,5 @@
 import {Radio, Card, Button, RadioChangeEvent, Typography, Flex, Modal, theme, ConfigProvider} from 'antd';
-import {useQuestionStore} from '../modal/currentQuestions'
+import {useQuestionStore} from '../store/currentQuestions'
 import useThemeListener from "../hooks/useTheme";
 
 const {Text} = Typography;

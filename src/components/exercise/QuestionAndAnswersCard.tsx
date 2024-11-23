@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import SingleSelect from "./SingleSelect";
 import CollapsibleTip from "../../../components/CollapsibleTip";
+import useSubmitStore from "../../store/useExerciseStore";
 
 type QuestionAndAnswersCardProps = {
     children?: React.ReactNode;
@@ -11,7 +12,8 @@ type QuestionAndAnswersCardProps = {
 const QuestionAndAnswersCard = (props: QuestionAndAnswersCardProps) => {
     const {children,options,currentAnswer} = props;
     const [value, setValue] = useState<string>()
-    const showCorrectAnswer = true
+    const {exerciseState} = useSubmitStore();
+
     return (
         <div>
             <SingleSelect
@@ -19,9 +21,9 @@ const QuestionAndAnswersCard = (props: QuestionAndAnswersCardProps) => {
                 currentAnswer={currentAnswer}
                 value={value}
                 onChange={setValue}
-                showCorrectAnswer={showCorrectAnswer}
+                showCorrectAnswer={exerciseState.isSubmitted}
             />
-            {showCorrectAnswer&&<CollapsibleTip title={"解析"}>{children}</CollapsibleTip>}
+            {exerciseState.isSubmitted&&<CollapsibleTip type="tip" title="解析">{children}</CollapsibleTip>}
         </div>
     );
 };

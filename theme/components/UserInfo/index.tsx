@@ -1,6 +1,6 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {Button, Card, ConfigProvider, Flex, Form, Image, Input, message, Modal, theme} from "antd";
-import {useUserInfoStore} from "../../../modal/userInfoStore.ts";
+import {useUserInfoStore} from "../../../store/userInfoStore.ts";
 import {verifyCode} from '../../../lib/bcryptUtils'
 import Auth from "../../../lib/auth.tsx";
 import {normalizeImagePath, useDark} from "rspress/runtime";

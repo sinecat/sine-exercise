@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {useUserInfoStore} from "../../modal/userInfoStore";
+import {useUserInfoStore} from "../../store/userInfoStore";
 import './styles.less'
 import {Card, Flex, Image, Typography} from "antd";
 import {useDark} from 'rspress/runtime';

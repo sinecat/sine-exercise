@@ -14,7 +14,7 @@ import {
 import {useWindowSize} from "@uidotdev/usehooks";
 import {useEmotionCss} from '@ant-design/use-emotion-css';
 import {ScreenSizeType} from "../constant";
-import {useQuestionStore} from "../modal/currentQuestions";
+import {useQuestionStore} from "../store/currentQuestions";
 import useThemeListener from "../hooks/useTheme";
 
 const {Text} = Typography;

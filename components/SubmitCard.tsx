@@ -1,5 +1,5 @@
 import {Card, Flex, Button, Modal} from "antd";
-import {useQuestionStore} from "../modal/currentQuestions";
+import {useQuestionStore} from "../store/currentQuestions";
 
 const { confirm } = Modal;
 

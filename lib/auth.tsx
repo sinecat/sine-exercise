@@ -1,6 +1,6 @@
 import {verifyCode} from "./bcryptUtils.ts";
 import {ACTIVATION_CODE} from "../constant";
-import {useUserInfoStore} from "../modal/userInfoStore";
+import {useUserInfoStore} from "../store/userInfoStore";
 import React, {useEffect} from "react";
 
 const Auth = () => {
