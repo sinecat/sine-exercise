@@ -21,12 +21,16 @@
     "text": "练习",
     "items": [
       {
-        "text": "逻辑600题",
-        "link": "logic-600/练习题1"
+        "text": "郭煕言语必做100题",
+        "link": "speech-must-do-100/section-1"
       },
       {
-        "text": "言语必做100题",
-        "link": "speech-must-do-100/section-1"
+        "text": "聂佳定义30组",
+        "link": "Define-judgement-30-groups/section-1"
+      },
+      {
+        "text": "逻辑600题",
+        "link": "logic-600/练习题1"
       }
     ]
   }
