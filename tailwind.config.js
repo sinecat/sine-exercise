@@ -17,16 +17,23 @@ module.exports = {
             backgroundColor: {
                 'success': '#EEFAF7',
                 'error': '#FFF6F3',
-                'background':'var(--rp-c-bg)'
+                'background':'var(--rp-c-bg)',
+                'rs-tip':'var(--rp-container-tip-bg)',
+                'rs-danger':'var(--rp-container-danger-bg)',
+                'rs-details':'var(--rp-container-details-bg)',
             },
             borderColor: {
                 'success': '#94E3C9',
                 'error': '#FFBBA4',
                 'error-dark': '#FF561B',
-                'default': '#E1E4E8'
+                'default': '#E1E4E8',
+                'rs-tip':'var(--rp-container-tip-border)',
+                'rs-danger':'var(--rp-container-danger-border)',
+                'rs-details':'var(--rp-container-details-border)'
             },
             textColor: {
                 'success': '#94E3C9',
+                'success-dark': '#32CA99',
                 'error': '#FFBBA4',
                 'error-dark': '#FF561B',
                 'default': '#E1E4E8'

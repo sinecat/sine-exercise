@@ -4,9 +4,9 @@ import {clsx} from "clsx";
 import useSubmitStore from "../../store/useExerciseStore";
 import {Button} from "antd";
 import {useWindowSize} from "@uidotdev/usehooks";
-import {useSize} from "ahooks";
+import {useSize, useTimeout} from "ahooks";
 import useAnswerCardHeightStore from "../../store/useAnswerCardHeightStore";
-import {useDark} from "rspress/runtime";
+import useTimer from "../../hooks/useTimer";
 
 const AnswerCard: React.FC = () => {
     const {setHeight} = useAnswerCardHeightStore();
@@ -15,6 +15,11 @@ const AnswerCard: React.FC = () => {
     const [isShowCard, setIsShowCard] = useState(true)
     const answerCardRef = useRef(null);
     const answerCardSize = useSize(answerCardRef);
+    const {formattedTime, start, pause, reset: timeReset} = useTimer()
+    const [isStartTimed, setIsStartTimed] = useState(false)
+    const [isBegan, setIsBegan] = useState(false)
+    const [accuracyRate, setAccuracyRate] = useState(0)
+    const [isReadOnly, setIsReadOnly] = useState(false)
 
     const size = useWindowSize()
     const {
@@ -26,23 +31,67 @@ const AnswerCard: React.FC = () => {
 
     const reset = () => {
         resetExerciseState()
+        timeReset()
+        setIsReadOnly(false)
+        setIsBegan(false)
     }
 
     const handleClickShowCard = () => {
         setIsShowCard(!isShowCard)
     }
 
+    const handleClickQuestionNumber = (index:number) => {
+        window.location.hash = `#${index}`;
+    }
+
     const handleClickSubmit = () => {
         setSubmitted(true)
+        pause()
+        // 计算正确率
+        const correctCount = exerciseState.currentAnswersData.filter((item, index) => item === exerciseState.correctAnswersData[index]).length;
+        if (!correctCount) {
+            setAccuracyRate(0)
+            return
+        }
+        // 转换为整数百分比
+        setAccuracyRate(Math.round((correctCount / exerciseState.correctAnswersData.length) * 100));
     }
 
     const handleClickReset = () => {
         reset()
     }
 
+    const handleClickTimeBtn = () => {
+        if (!isBegan) {
+            setIsBegan(true)
+        }
+        if (isStartTimed) {
+            pause()
+        } else {
+            start()
+        }
+        setIsStartTimed(!isStartTimed)
+    }
+
+    const handleClickReadOnlyBtn = () => {
+        setIsReadOnly(!isReadOnly)
+        setSubmitted(true)
+    }
+
     useEffect(() => {
         setHeight(answerCardSize?.height || 0)
     }, [answerCardSize]);
+
+    useEffect(() => {
+        if (!isBegan) {
+            const hasData = exerciseState.currentAnswersData.some(item => item !== '');
+            if (hasData){
+                setIsBegan(true)
+                start()
+                setIsStartTimed(true)
+            }
+        }
+    }, [exerciseState.currentAnswersData]);
 
     useEffect(() => {
         const updatePosition = () => {
@@ -82,7 +131,10 @@ const AnswerCard: React.FC = () => {
                 className="absolute flex gap-2 text-center rounded-t-2xl -top-8 left-0 px-4 py-2 cursor-pointer bg-inherit shadow-top"
                 onClick={handleClickShowCard}
             >
-                答题卡{isShowCard ? <DownOutlined/> : <UpOutlined/>}
+                {!isReadOnly && <span className="pr-2">{formattedTime}</span>}
+                {exerciseState.isSubmitted && !isReadOnly &&
+                    <span className="pr-2">{'正确率：' + accuracyRate + '%'}</span>}
+                <span> 答题卡{isShowCard ? <DownOutlined/> : <UpOutlined/>}</span>
             </p>
 
             <div ref={answerCardRef} className={clsx("rspress-answer-card", isShowCard ? "block" : "hidden")}>
@@ -92,17 +144,22 @@ const AnswerCard: React.FC = () => {
                             key={index}
                             className={clsx(
                                 "w-8 h-8 flex items-center justify-center rounded-full border border-default hover:border-[#32CA99] hover:bg-[#32CA99] hover:text-white",
-                                !exerciseState.isSubmitted &&exerciseState.currentAnswersData[index] && "border-success text-success",
-                                exerciseState.isSubmitted && exerciseState.currentAnswersData[index] === exerciseState.correctAnswersData[index] && "bg-success border-success text-success",
-                                exerciseState.isSubmitted && exerciseState.currentAnswersData[index] !== exerciseState.correctAnswersData[index] && "bg-error border-error-dark text-error-dark",
+                                !exerciseState.isSubmitted && exerciseState.currentAnswersData[index] && "border-rs-tip bg-rs-tip text-success-dark",
+                                exerciseState.isSubmitted && exerciseState.currentAnswersData[index] === exerciseState.correctAnswersData[index] && "bg-rs-tip border-rs-tip text-success",
+                                exerciseState.isSubmitted && exerciseState.currentAnswersData[index] !== exerciseState.correctAnswersData[index] && "bg-rs-danger border-rs-danger text-error-dark",
                             )}
+                            onClick={() => handleClickQuestionNumber(index + 1)}
                         >
                             {index + 1}
                         </button>
                     ))}
                 </div>
                 {<div className="flex justify-end mx-4 mb-4 gap-4">
-                    {!exerciseState.isSubmitted && <Button type="primary" onClick={handleClickSubmit}>只看</Button>}
+                    {!exerciseState.isSubmitted &&
+                        <Button type="primary"
+                                onClick={handleClickTimeBtn}>{isStartTimed ? '暂停计时' : '开始计时'}</Button>}
+                    {!exerciseState.isSubmitted &&
+                        <Button type="primary" onClick={handleClickReadOnlyBtn}>只看</Button>}
                     {!exerciseState.isSubmitted && <Button type="primary" onClick={handleClickSubmit}>交卷</Button>}
                     {exerciseState.isSubmitted && <Button type="primary" onClick={handleClickReset}>重做</Button>}
                 </div>}

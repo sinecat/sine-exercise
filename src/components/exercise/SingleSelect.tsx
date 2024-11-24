@@ -30,10 +30,10 @@ const SingleSelect: React.FC<SingleSelectProps> = (props: SingleSelectProps) => 
                         className={cn(
                             'flex items-center px-4 py-2 border border-transparent rounded-lg cursor-pointer transition-all',
                             {
-                                'bg-success border-success': isSelected && !showCorrectAnswer, // 正常选中
-                                'bg-error border-error': isWrong, // 错误选中
-                                'bg-success border border-success': showCorrectAnswer && isCorrect, // 显示正确答案
-                                'hover:bg-gray-50': !showCorrectAnswer && !isSelected, // 默认
+                                'bg-rs-tip border-rs-tip': isSelected && !showCorrectAnswer, // 正常选中
+                                'bg-rs-danger border-rs-danger': isWrong, // 错误选中
+                                'bg-rs-tip border border-rs-tip': showCorrectAnswer && isCorrect, // 显示正确答案
+                                'hover:bg-rs-details': !showCorrectAnswer && !isSelected, // 默认
                             },
                         )}
                     >
