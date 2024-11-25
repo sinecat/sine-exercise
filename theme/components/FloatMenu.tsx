@@ -38,12 +38,12 @@ const FloatMenu = () => {
                         window.scrollTo({top: document.body.scrollHeight})
                     }}
                 />
-                <div className={clsx(
-                    "w-10 h-10 flex md:hidden lg:hidden items-center justify-center bg-white rounded-full shadow-xl",
-                    dark && "bg-[#1f1f1f]"
-                )}>
-                    <Search/>
-                </div>
+                {/*<div className={clsx(*/}
+                {/*    "w-10 h-10 flex md:hidden lg:hidden items-center justify-center bg-white rounded-full shadow-xl",*/}
+                {/*    dark && "bg-[#1f1f1f]"*/}
+                {/*)}>*/}
+                {/*    <Search/>*/}
+                {/*</div>*/}
             </FloatButton.Group>
         </ConfigProvider>
     );
