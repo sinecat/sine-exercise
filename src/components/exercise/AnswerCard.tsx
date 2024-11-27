@@ -82,16 +82,16 @@ export const AnswerCard: React.FC = () => {
         setHeight(answerCardSize?.height || 0)
     }, [answerCardSize]);
 
-    useEffect(() => {
-        if (!isBegan) {
-            const hasData = exerciseState.currentAnswersData.some(item => item !== '');
-            if (hasData){
-                setIsBegan(true)
-                start()
-                setIsStartTimed(true)
-            }
-        }
-    }, [exerciseState.currentAnswersData]);
+    // useEffect(() => {
+    //     if (!isBegan) {
+    //         const hasData = exerciseState.currentAnswersData.some(item => item !== '');
+    //         if (hasData){
+    //             setIsBegan(true)
+    //             start()
+    //             setIsStartTimed(true)
+    //         }
+    //     }
+    // }, [exerciseState.currentAnswersData]);
 
     useEffect(() => {
         const updatePosition = () => {
