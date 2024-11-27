@@ -10,7 +10,7 @@ type QuestionAndAnswersCardProps = {
     index: number;
 };
 
-const QuestionAndAnswerItem = (props: QuestionAndAnswersCardProps) => {
+export const QuestionAndAnswerItem = (props: QuestionAndAnswersCardProps) => {
     const {children, options, correctAnswer, index:propsIndex} = props;
     const index = propsIndex-1
     const [value, setValue] = useState<string>("")

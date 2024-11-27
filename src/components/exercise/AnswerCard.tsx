@@ -8,7 +8,7 @@ import {useSize, useTimeout} from "ahooks";
 import useAnswerCardHeightStore from "../../store/useAnswerCardHeightStore";
 import useTimer from "../../hooks/useTimer";
 
-const AnswerCard: React.FC = () => {
+export const AnswerCard: React.FC = () => {
     const {setHeight} = useAnswerCardHeightStore();
     const [leftOffset, setLeftOffset] = useState(0);
     const [width, setWidth] = useState(0);

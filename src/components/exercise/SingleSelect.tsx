@@ -10,7 +10,7 @@ interface SingleSelectProps {
     showCorrectAnswer?: boolean; // 是否显示正确答案
 }
 
-const SingleSelect: React.FC<SingleSelectProps> = (props: SingleSelectProps) => {
+export const SingleSelect: React.FC<SingleSelectProps> = (props: SingleSelectProps) => {
     const {options, value, onChange, correctAnswer, showCorrectAnswer = false} = props;
     const handleChange = (value: string) => {
         onChange(value)

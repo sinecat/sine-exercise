@@ -5,7 +5,7 @@ interface RevealTextProps {
     children: React.ReactNode;
 }
 
-const RevealText: React.FC<RevealTextProps> = (props: RevealTextProps) => {
+export const RevealText: React.FC<RevealTextProps> = (props: RevealTextProps) => {
     const {children} = props
     const [isRevealed, setIsRevealed] = useState(false);
 

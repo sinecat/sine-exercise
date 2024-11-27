@@ -3,7 +3,7 @@ import {CommentOutlined, LeftOutlined} from "@ant-design/icons";
 import { FloatButton } from 'antd';
 import useSubmitStore from "../../store/useExerciseStore";
 
-const SubmitButton = () => {
+export const SubmitButton = () => {
     const {setSubmitted} = useSubmitStore();
 
     const handleSubmit = ()=>{
