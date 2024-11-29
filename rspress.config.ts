@@ -46,4 +46,23 @@ export default defineConfig({
         lastUpdatedText: '最后更新时间',
         outlineTitle: 'Catalogue', //在右侧边栏中配置大纲的标题
     },
+    builderConfig: {
+        html: {
+            tags: [
+                {
+                    tag: 'script',
+                    attrs: {
+                        src: '/script.js',
+                    },
+                },
+                {
+                    tag: 'link',
+                    attrs: {
+                        rel: 'manifest',
+                        href: '/manifest.json',
+                    },
+                },
+            ],
+        },
+    },
 });
