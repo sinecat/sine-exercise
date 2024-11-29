@@ -20,10 +20,15 @@
   ],
   "screenshots": [
     {
-      "src": "/sine-icon.png",
-      "sizes": "256x256",
+      "src": "/screen-pc.png",
+      "sizes": "2560x1440",
       "type": "image/png",
       "form_factor": "wide"
+    },
+    {
+      "src": "/screen-mobile.jpg",
+      "sizes": "690x1533",
+      "type": "image/png"
     }
   ]
 }
