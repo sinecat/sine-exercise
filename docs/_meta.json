@@ -18,6 +18,11 @@
     ]
   },
   {
+    "text": "资料分析",
+    "link": "/data-analysis/chapter-1",
+    "activeMatch": "/data-analysis/"
+  },
+  {
     "text": "练习",
     "items": [
       {
@@ -26,7 +31,7 @@
       },
       {
         "text": "聂佳定义30组",
-        "link": "Define-judgement-30-groups/section-1"
+        "link": "define-judgement-30-groups/section-1"
       }
     ]
   }
