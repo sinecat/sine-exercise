@@ -16,9 +16,9 @@ export default defineConfig({
     plugins: [
         katex(), //latex解析
         superSub(), //上标下标
-        // readingTime({ //文档预计阅读时间
-        //     defaultLocale: 'zh-CN',
-        // }),
+        readingTime({ //文档预计阅读时间
+            defaultLocale: 'zh-CN',
+        }),
         // 暂时启用没有效果
         // live2d({
         //     models: [
@@ -36,13 +36,14 @@ export default defineConfig({
         selector: '.rspress-doc img',
     },
     themeConfig: {
+        hideNavbar: 'never',
         socialLinks: [
             // {icon: 'github', mode: 'link', content: 'https://github.com/web-infra-dev/rspress'},
         ],
         // enableScrollToTop: true, //滚动到顶部按钮
         enableContentAnimation: true, //页面转成动画
         enableAppearanceAnimation: true, //主题切换动画效果
-        // lastUpdated: true, //是否显示最后的更新时间
+        lastUpdated: true, //是否显示最后的更新时间
         lastUpdatedText: '最后更新时间',
         outlineTitle: 'Catalogue', //在右侧边栏中配置大纲的标题
     },

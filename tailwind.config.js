@@ -23,6 +23,7 @@ module.exports = {
                 'rs-details':'var(--rp-container-details-bg)',
             },
             borderColor: {
+                'divider':'var(--rp-c-divider-light)',
                 'success': '#94E3C9',
                 'error': '#FFBBA4',
                 'error-dark': '#FF561B',

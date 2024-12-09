@@ -1,4 +1,4 @@
-import Theme from 'rspress/theme';
+import Theme, { Toc } from 'rspress/theme';
 import UserInfo from "./components/UserInfo";
 import '../styles/index.less'
 import 'animate.css';
@@ -7,6 +7,7 @@ import HomePage from "../components/HomePage";
 import FloatMenu from "./components/FloatMenu.tsx";
 import {useDark} from "rspress/runtime";
 import {useEffect, useMemo} from "react";
+import CustomToc from "./components/CustomToc.tsx";
 
 // 以下展示所有的 Props
 
@@ -31,6 +32,7 @@ const Layout = () => {
 
     return <>
         <Theme.Layout
+            beforeDocContent={<CustomToc/>}
             afterDoc={<FloatMenu/>}
             afterNavMenu={<UserInfo/>}
             afterOutline={<ScrollProgress/>}
