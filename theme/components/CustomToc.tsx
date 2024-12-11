@@ -4,11 +4,11 @@ import {DownOutlined, RightOutlined} from "@ant-design/icons";
 import {useWindowSize} from "@uidotdev/usehooks";
 import {clsx} from "clsx";
 
-const CustomToc: React.FC<TOCProps> = () => {
+const CustomToc = () => {
     const [isVisible, setIsVisible] = useState(false);
     const size = useWindowSize()
     const isShowToc = useMemo(() => {
-        return size.width > 960 && size.width < 1280
+        return size.width && size.width > 960 && size.width < 1280
     }, [size])
 
     const toggleTOC = () => {
@@ -16,7 +16,8 @@ const CustomToc: React.FC<TOCProps> = () => {
     };
 
     return (
-        <div className={clsx("sticky top-0 bg-background border-b border-divider -mt-12 mb-9 w-full z-50",isShowToc?"block":"hidden")}>
+        <div
+            className={clsx("sticky top-0 bg-background border-b border-divider -mt-12 mb-9 w-full z-50", isShowToc ? "block" : "hidden")}>
             {/* 切换按钮 */}
             <div
                 onClick={toggleTOC}

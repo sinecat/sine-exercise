@@ -1,10 +1,14 @@
-module.exports = {
+import type {Config} from 'tailwindcss';
+
+const config: Config = {
     content: ['./src/**/*.tsx', './docs/**/*.mdx', './components/**/*.tsx', './theme/**/*.tsx'],
     theme: {
         extend: {
             screens: {
-                'lg': '1280px', // 修改 lg 断点为 1280px
-                'md': '960px'
+                xs: '480px',
+                sm: '640px',
+                md: '960px',
+                lg: '1280px',// 修改lg断点为1280px
             },
             colors: {
                 'green-primary': '#70C549',
@@ -17,20 +21,20 @@ module.exports = {
             backgroundColor: {
                 'success': '#EEFAF7',
                 'error': '#FFF6F3',
-                'background':'var(--rp-c-bg)',
-                'rs-tip':'var(--rp-container-tip-bg)',
-                'rs-danger':'var(--rp-container-danger-bg)',
-                'rs-details':'var(--rp-container-details-bg)',
+                'background': 'var(--rp-c-bg)',
+                'rs-tip': 'var(--rp-container-tip-bg)',
+                'rs-danger': 'var(--rp-container-danger-bg)',
+                'rs-details': 'var(--rp-container-details-bg)',
             },
             borderColor: {
-                'divider':'var(--rp-c-divider-light)',
+                'divider': 'var(--rp-c-divider-light)',
                 'success': '#94E3C9',
                 'error': '#FFBBA4',
                 'error-dark': '#FF561B',
                 'default': '#E1E4E8',
-                'rs-tip':'var(--rp-container-tip-border)',
-                'rs-danger':'var(--rp-container-danger-border)',
-                'rs-details':'var(--rp-container-details-border)'
+                'rs-tip': 'var(--rp-container-tip-border)',
+                'rs-danger': 'var(--rp-container-danger-border)',
+                'rs-details': 'var(--rp-container-details-border)'
             },
             textColor: {
                 'success': '#94E3C9',
@@ -57,6 +61,7 @@ module.exports = {
         },
     },
     plugins: [
+        // @ts-ignore
         function ({addUtilities, theme, e}) {
             const delays = theme('animationDelay');
             const utilities = Object.entries(delays).map(([key, value]) => {
@@ -70,3 +75,5 @@ module.exports = {
         },
     ],
 };
+
+export default config;
