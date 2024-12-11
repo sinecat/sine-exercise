@@ -16,3 +16,64 @@
 .animation-delay-500{
   animation-delay: 500ms;
 }
+
+.countdown-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 12px 24px;
+
+  .icon-container {
+    .anticon {
+      color: #52c41a;
+    }
+  }
+
+  .time-container {
+    display: flex;
+    gap: 16px;
+
+    .time-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .time-value {
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #52c41a;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+
+        /* 动画效果 */
+        &.animate-slide {
+          animation: slide-in 0.4s ease forwards;
+        }
+      }
+
+      .time-label {
+        font-size: 0.75rem;
+        color: #888;
+      }
+    }
+  }
+}
+
+/* 关键帧动画 */
+@keyframes slide-in {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
