@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {
-    ProductOutlined,
+    ProductOutlined, RightCircleOutlined, SendOutlined,
     VerticalAlignBottomOutlined
 } from "@ant-design/icons";
 import {ConfigProvider, FloatButton, theme} from 'antd';
@@ -10,12 +10,22 @@ import {clsx} from "clsx";
 import {useParams} from "react-router-dom";
 import useAnswerCardHeightStore from "../../src/store/useAnswerCardHeightStore.ts";
 import {cn} from "../../src/lib/utils.ts";
+import {useLocalStorage} from '@uidotdev/usehooks';
 
 const FloatMenu = () => {
     const dark = useDark();
     const [cardHeight, setCardHeight] = React.useState(0);
     const params = useParams();
     const {height} = useAnswerCardHeightStore()
+    const [markUrl, setMarkUrl] = useLocalStorage('markUrl', '')
+
+    const handleSetMark = () => {
+        setMarkUrl(window.location.href || '/')
+    }
+
+    const handleNavigateToMarkUrl = () => {
+        window.location.href = markUrl
+    }
 
     return (
         <ConfigProvider
@@ -31,6 +41,14 @@ const FloatMenu = () => {
                 placement="top"
                 icon={<ProductOutlined/>}
             >
+                <FloatButton
+                    icon={<SendOutlined />}
+                    onClick={handleSetMark}
+                />
+                <FloatButton
+                    icon={<RightCircleOutlined />}
+                    onClick={handleNavigateToMarkUrl}
+                />
                 <FloatButton.BackTop visibilityHeight={0} duration={0}/>
                 <FloatButton
                     icon={<VerticalAlignBottomOutlined/>}
