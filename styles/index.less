@@ -11,6 +11,7 @@
   --rp-aside-width: 268px;
   --rp-home-hero-name-background: -webkit-linear-gradient(120deg, #95CC47 30%, #95CC47);
   --rp-home-mask-background-image: conic-gradient(from 180deg at 50% 50%, var(--rp-c-brand) 0deg, 180deg, #95CC47 1turn);
+  --rp-font-family-base: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 :root {
@@ -67,7 +68,7 @@
   --rp-c-divider-light: rgba(84, 84, 84, 0.48);
 
 
-  --rp-c-text-1: rgba(255, 255, 245, 0.93);
+  --rp-c-text-1: rgba(255, 255, 255, 0.86);
   --rp-c-text-2: rgba(235, 235, 235, 0.56);
   --rp-c-text-3: rgba(235, 235, 235, 0.38);
   --rp-c-text-4: rgba(235, 235, 235, 0.18);
@@ -94,20 +95,20 @@
 }
 
 //覆盖code样式
-//code {
-//  background-color: #FFF5F5 !important;
-//  color: #FF502C !important;
-//}
+code {
+  //background-color: #FFF5F5 !important;
+  color: #FF502C !important;
+}
 
 //覆盖katex样式
 //.katex {
 //  font-size: 1.7em !important;
 //}
-.mord .cjk_fallback{
+.mord .cjk_fallback {
   font-size: 12px !important;
 }
 
-.rspress-doc{
+.rspress-doc {
   position: relative;
 }
 
@@ -115,6 +116,6 @@
   width: 1280px;
 }
 
-.rspress-doc-container{
+.rspress-doc-container {
   //position: relative;
 }
