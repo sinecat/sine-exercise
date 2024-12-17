@@ -8,6 +8,7 @@ import {Search} from "rspress/theme";
 import {useDark} from "rspress/runtime";
 import {clsx} from "clsx";
 import {useParams} from "react-router-dom";
+import {useNavigate,useLocation} from "rspress/runtime"
 import useAnswerCardHeightStore from "../../src/store/useAnswerCardHeightStore.ts";
 import {cn} from "../../src/lib/utils.ts";
 import {useLocalStorage} from '@uidotdev/usehooks';
@@ -16,15 +17,21 @@ const FloatMenu = () => {
     const dark = useDark();
     const [cardHeight, setCardHeight] = React.useState(0);
     const params = useParams();
+    const navigate = useNavigate()
+    const location = useLocation()
     const {height} = useAnswerCardHeightStore()
     const [markUrl, setMarkUrl] = useLocalStorage('markUrl', '')
 
     const handleSetMark = () => {
+        // const url = location.pathname+location.hash
+        // setMarkUrl(url)
         setMarkUrl(window.location.href || '/')
     }
 
     const handleNavigateToMarkUrl = () => {
         window.location.href = markUrl
+        // history.pushState(null, '', markUrl)
+        // navigate(markUrl)
     }
 
     return (
