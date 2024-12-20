@@ -17,7 +17,7 @@ const CustomToc = () => {
 
     return (
         <div
-            className={clsx("sticky top-0 bg-background border-b border-divider -mt-12 mb-9 w-full z-50", isShowToc ? "block" : "hidden")}>
+            className={clsx("sticky top-[72px] bg-background border-b border-divider -mt-12 mb-9 w-full z-50", isShowToc ? "block" : "hidden")}>
             {/* 切换按钮 */}
             <div
                 onClick={toggleTOC}
